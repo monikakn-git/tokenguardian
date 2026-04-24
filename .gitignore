@@ -15,6 +15,10 @@ env/
 .env
 *.env
 
+# Firebase service account key — never commit
+serviceAccountKey.json
+*firebase-adminsdk*.json
+
 # Database files
 *.db
 *.sqlite
