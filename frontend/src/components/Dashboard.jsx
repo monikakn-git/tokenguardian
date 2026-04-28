@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { LogOut, AlertTriangle, ShieldAlert, KeyRound, RadioReceiver, CheckCircle } from 'lucide-react';
+import LinkScanner from './LinkScanner';
 
 const API_BASE = 'http://127.0.0.1:8001/api';
 
@@ -145,7 +146,11 @@ const Dashboard = ({ setToken, token }) => {
             </button>
           </div>
 
+          {/* Suspicious Link Scanner */}
+          <LinkScanner token={token} />
+
           {/* Password Reset */}
+
           <div className="glass-panel">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
               <KeyRound size={24} color="var(--primary-color)" />
