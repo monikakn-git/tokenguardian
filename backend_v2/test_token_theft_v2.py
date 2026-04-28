@@ -30,10 +30,10 @@ def check(label: str, condition: bool, detail: str = ""):
     global PASS_COUNT, FAIL_COUNT
     if condition:
         PASS_COUNT += 1
-        print(f"  ✅ PASS — {label}")
+        print(f"  [PASS] -- {label}")
     else:
         FAIL_COUNT += 1
-        print(f"  ❌ FAIL — {label}" + (f" | {detail}" if detail else ""))
+        print(f"  [FAIL] -- {label}" + (f" | {detail}" if detail else ""))
 
 
 def headers(token: str, ip: str, ua: str) -> dict:
@@ -44,7 +44,7 @@ def headers(token: str, ip: str, ua: str) -> dict:
     }
 
 
-print("\n🛡️  TokenGuardian v2 — Attack Simulation\n" + "=" * 45)
+print("\n[TokenGuardian v2] -- Attack Simulation\n" + "=" * 45)
 
 # ── TEST 1: Register + Login ──────────────────────────────────────────────────
 print("\n[1] Register & Login")
@@ -101,7 +101,7 @@ check("Old token returns 403", r.status_code == 403, f"got {r.status_code}: {r.t
 print(f"\n{'='*45}")
 print(f"  Results: {PASS_COUNT} passed / {FAIL_COUNT} failed")
 if FAIL_COUNT == 0:
-    print("  🎉 All tests passed! Demo is ready.\n")
+    print("  All tests passed! Demo is ready.\n")
 else:
-    print("  ⚠️  Some tests failed. Check backend logs.\n")
+    print("  Some tests failed. Check backend logs.\n")
     sys.exit(1)
